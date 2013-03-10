@@ -7,7 +7,7 @@ feature "Editing Projects" do
     click_link 'Edit Project'
   end
   
-  Scenario "Updating a project" do
+  scenario "Updating a project" do
     fill_in "Name", :with => "TextMate 2 beta"
     click_button "Update Project"
     page.should have_content("Project has been updated.")
