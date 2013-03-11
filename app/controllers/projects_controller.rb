@@ -34,7 +34,7 @@ def update
      end
     end
     
-    def destroy
+def destroy
     @project = Project.find(params[:id])
     @project.destroy
     flash[:notice] = "Project has been deleted."
