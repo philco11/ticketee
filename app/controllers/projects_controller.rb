@@ -46,6 +46,7 @@ def destroy
     end
 
     private
+    
       def find_project
         @project = Project.find(params[:id])
         rescue ActiveRecord::RecordNotFound
