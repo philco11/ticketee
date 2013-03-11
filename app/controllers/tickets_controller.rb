@@ -22,7 +22,6 @@ def update
   end
 end
 
-
 def create
   @ticket = @project.tickets.build(params[:ticket])
   if @ticket.save
@@ -32,6 +31,12 @@ def create
     flash[:alert] = "Ticket has not been created."
     render :action =>  "new"
   end
+end
+
+def destroy
+  @ticket.destroy
+  flash[:notice] = "Ticket has been deleted."
+  redirect_to @project
 end
 
 
