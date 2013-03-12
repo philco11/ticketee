@@ -47,6 +47,7 @@ group :test, :development do
   gem 'pry-doc'
   gem 'launchy'
   gem 'pry-debugger'
+  gem 'devise', '2.1.0.rc'
 end
 
 group :test do
