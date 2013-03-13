@@ -7,7 +7,7 @@ feature 'Deleting tickets' do
     ticket.update_attribute(:user, user)
     ticket
   before do
-      sign_in_as!(user)
+      sign_in_as!(Factory(:admin_user))
     visit '/'
     click_link project.name
     click_link ticket.title
