@@ -48,6 +48,7 @@ group :test, :development do
   gem 'launchy'
   gem 'pry-debugger'
   gem 'devise', '2.1.0.rc'
+  gem "letter_opener"
 end
 
 group :test do

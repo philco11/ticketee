@@ -13,7 +13,7 @@ feature "Creating Tickets" do
     fill_in "Password", :with => "password"
     click_button "Sign in"
     within("h2") { page.should have_content("New Ticket") }
-  end
+    end
   
   scenario "Creating a ticket" do
     fill_in "Title", :with => "Non-standards compliance"

@@ -13,6 +13,8 @@ RSpec.configure do |config|
     ActionMailer::Base.deliveries.clear
   end
 config.include EmailSpec::Helpers
+
+  config.include Devise::TestHelpers, :type => :controller
   
     
     
