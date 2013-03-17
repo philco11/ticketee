@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 feature 'Signing up' do
   scenario 'Successful sign up' do
     visit '/'
