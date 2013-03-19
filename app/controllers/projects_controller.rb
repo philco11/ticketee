@@ -31,12 +31,15 @@ class ProjectsController < ApplicationController
 
     end
     
-def update
-
-   if @project.update_attributes(params[:project])
-     flash[:notice] = "Project has been updated."
-     render :action => "edit"
-     end
+    def update
+      @project = Project.find(params[:id])
+      if @project.update_attributes(params[:project])
+        flash[:notice] = "Project has been updated."
+        redirect_to @project
+      else
+        flash[:alert] = "Project has not been updated."
+        render :action => "edit"
+      end
     end
     
 def destroy

@@ -16,8 +16,8 @@ class Admin::UsersController < Admin::BaseController
         flash[:notice] = "User has been created."
         redirect_to admin_users_path
     else
-        flash.now[:alert] = "user has not been created."
-        redner :action => "new"
+        flash.now[:alert] = "User has not been created."
+        render :action => "new"
     end
   end
   
@@ -31,8 +31,8 @@ class Admin::UsersController < Admin::BaseController
   def update
   @user.skip_reconfirmation! 
     if params[:user][:password].blank?
-    params[:user].delete(:password)
-    params[:user].delete(:password_confirmation)
+      params[:user].delete(:password)
+      params[:user].delete(:password_confirmation)
     end
     
     if @user.update_attributes(params[:user], :as => :admin)
@@ -41,12 +41,7 @@ class Admin::UsersController < Admin::BaseController
     else
       flash[:alert] = "User has not been updated."
       render :action => "edit"
-  end 
-  
-  def destroy
-    @user.destroy
-    flash[:notice] = "User has been deleted."
-    redirect_to admin_users_path
+    end 
   end
   
   def destroy
@@ -57,10 +52,7 @@ class Admin::UsersController < Admin::BaseController
       flash[:notice] = "User has been deleted."
     end
     redirect_to admin_users_path
-  end
-  
-  end
-  
+  end  
   
   private
   
